@@ -9,14 +9,12 @@ import {Router} from '@angular/router';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
-  product = [];
   formAddProduct: FormGroup;
   constructor(private productService: ProductService,
               private fb: FormBuilder,
               private router: Router) { }
 
   ngOnInit(): void {
-    this.product = this.productService.getAll();
     this.formAddProduct = this.fb.group({
       id: [''],
       name: [''],
